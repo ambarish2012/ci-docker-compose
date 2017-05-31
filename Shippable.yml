@@ -10,6 +10,7 @@ build:
     - cp -R . /app
     - pip install -U docker-compose
     - docker-compose up -d web redis
-    - docker inspect $(docker ps -q)
+    - docker ps -a
+    #- docker inspect $(docker ps -q)
     - curl http://localhost:5000
     - docker-compose down
