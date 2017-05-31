@@ -8,6 +8,7 @@ build:
     options: "--net=host"
   ci:
     - cp -R . /app
+    - pip install -U docker-compose
     - docker-compose up -d web redis
     - curl http://localhost:5000
     - docker-compose down
