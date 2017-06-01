@@ -10,10 +10,12 @@ build:
     - cp -R . /app
     - pip install -U docker-compose
     - docker-compose build
-    - docker-compose up -d web redis
+    - docker-compose up -d web redis -v /app:/app
     - sleep 10
     - docker ps -a
     #- docker inspect $(docker ps -q)
     - docker logs cidockercompose_web_1 --tail 1000
     - docker exec cidockercompose_web_1 curl http://localhost:5000
+    - touch test.txt
+    - docker exec cidockercompose_web_1 ls -al
     - docker-compose down
