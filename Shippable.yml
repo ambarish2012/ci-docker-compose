@@ -16,5 +16,5 @@ build:
     #- docker inspect $(docker ps -q)
     #- docker logs cidockercompose_web_1 --tail 1000
     #- docker exec cidockercompose_web_1 curl http://localhost:5000
-    - docker-compose run -v /app:/app web ls -al
+    - docker-compose run -v /app:/app web ls -al /app
     - docker-compose down
