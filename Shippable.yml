@@ -12,7 +12,7 @@ build:
     - docker-compose build
     - docker-compose up -d web redis
     - docker ps -a
-    - docker inspect $(docker ps -q)
-    #- docker logs cidockercompose_web_1 --tail 1000
+    #- docker inspect $(docker ps -q)
+    - docker logs cidockercompose_web_1 --tail 1000
     - docker-compose run web curl http://localhost:5000
     - docker-compose down
