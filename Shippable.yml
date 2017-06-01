@@ -19,3 +19,7 @@ build:
     - docker-compose run -v /app:/app web ls -alh /
     - docker-compose run -v /app:/app web ls -alh /app
     - docker-compose down
+    - docker-compose up -d web redis
+    - sleep 10
+    - docker exec cidockercompose_web_1 ls -al /app
+    
