@@ -3,4 +3,5 @@ ADD . /code
 WORKDIR /code
 RUN pip install -r requirements.txt
 RUN apk --no-cache add curl 
-CMD ["/bin/bash", "ls -la"]
+CMD ["python", "app.py"]
+
